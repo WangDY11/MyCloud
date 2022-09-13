@@ -1,0 +1,19 @@
+# 环境配置 开发dev 测试test 正式prod
+spring:
+  profiles:
+    # 拉取配置文件环境，后缀
+    active: dev
+  application:
+    name: mycloud-service
+  cloud:
+    nacos:
+      config:
+        # 配置中心地址
+        server-addr: 43.143.165.97:18484
+        # 命名空间id
+        namespace: ${spring.profiles.active}
+        # 组
+        group: mycloud
+        file-extension: yml
+        # 拉取配置文件前缀
+        prefix: ${spring.application.name}
