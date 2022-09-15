@@ -1,6 +1,5 @@
 package com.vilsale.common.interceptor;
 
-import com.vilsale.common.auth.Auth;
 import com.vilsale.common.environment.ThreadLocalEnv;
 import com.vilsale.common.environment.ThreadLocalVar;
 import feign.RequestInterceptor;
@@ -15,8 +14,6 @@ import javax.annotation.Resource;
  * @date: 2022/3/10 9:55
  */
 public class OpenFeignInterceptor implements RequestInterceptor {
-    @Resource
-    private Auth auth;
 
     @Override
     public void apply(RequestTemplate template) {
