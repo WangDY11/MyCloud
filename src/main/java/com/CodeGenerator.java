@@ -60,11 +60,11 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://47.108.248.70:4379/markingviswxb?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://bj-cynosdbmysql-grp-rv6kj28g.sql.tencentcdb.com:20559/mycloud?useUnicode=true&useSSL=false&characterEncoding=utf8");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("vis_admin");
-        dsc.setPassword("h4IbXGifcesjctWt");
+        dsc.setUsername("root");
+        dsc.setPassword("Aa2723443");
         mpg.setDataSource(dsc);
 
         // 包配置
