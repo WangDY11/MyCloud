@@ -11,6 +11,7 @@ public class test01 {
     public static void main(String[] args) {
         int[] n = new int[]{2,1,1,2};
         System.out.println(rob(n));
+
     }
 
 
