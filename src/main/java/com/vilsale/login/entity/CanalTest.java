@@ -29,7 +29,7 @@ public class CanalTest extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "user_id", type = IdType.ID_WORKER_STR)
-    private Integer userId;
+    private String userId;
 
     @TableField("user_name")
     private String userName;
