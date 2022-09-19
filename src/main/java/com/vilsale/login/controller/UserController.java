@@ -12,14 +12,7 @@ import com.vilsale.common.base.BaseController;
 
 import javax.annotation.Resource;
 
-/**
- * <p>
- *  前端控制器
- * </p>
- *
- * @author AMK-SYZ
- * @since 2022-09-15
- */
+
 @RestController
 @RequestMapping("/login/user")
 public class UserController extends BaseController {
