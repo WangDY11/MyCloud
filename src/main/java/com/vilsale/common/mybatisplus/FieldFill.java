@@ -21,7 +21,7 @@ public class FieldFill implements MetaObjectHandler {
     public void insertFill(MetaObject metaObject) {
         this.setInsertFieldValByName("version", 0, metaObject);
         this.setInsertFieldValByName("ts", dateUtil.getTime(), metaObject);
-        this.setInsertFieldValByName("create_time", dateUtil.getTime(), metaObject);
+        this.setInsertFieldValByName("createTime", dateUtil.getTime(), metaObject);
     }
 
     @Override
