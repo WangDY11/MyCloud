@@ -1,5 +1,6 @@
 package com.vilsale.login.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.vilsale.login.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserService extends IService<User> {
 
+    void register(User user);
+
+    void login(User user);
+
+    JSONObject auth0(String phone, String password);
 }
