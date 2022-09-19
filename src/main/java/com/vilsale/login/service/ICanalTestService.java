@@ -1,5 +1,6 @@
 package com.vilsale.login.service;
 
+import com.alibaba.fastjson.JSONArray;
 import com.vilsale.login.entity.CanalTest;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ICanalTestService extends IService<CanalTest> {
 
+    void canalTestInsert(JSONArray data);
+
+    void canalTestUpdate(JSONArray data);
 }

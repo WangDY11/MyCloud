@@ -5,6 +5,7 @@ import com.vilsale.login.entity.User;
 import com.vilsale.login.mapper.UserMapper;
 import com.vilsale.login.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,10 +17,14 @@ import org.springframework.stereotype.Service;
  * @since 2022-09-15
  */
 @Service
+@Log4j2
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
 
     @Override
     public void register(User user) {
+        log.warn("register" + user.toString());
+        this.save(user);
+
 
     }
 
