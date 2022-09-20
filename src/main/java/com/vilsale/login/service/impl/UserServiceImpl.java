@@ -8,14 +8,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
-/**
- * <p>
- *  服务实现类
- * </p>
- *
- * @author AMK-SYZ
- * @since 2022-09-15
- */
+
 @Service
 @Log4j2
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
