@@ -69,6 +69,9 @@ public class CanalTestServiceImpl extends ServiceImpl<CanalTestMapper, CanalTest
             if (byId != null){
                 // 更新
                 this.updateById(canal);
+            }else {
+                // 插入
+                this.save(canal);
             }
         }
     }
