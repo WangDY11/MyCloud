@@ -16,12 +16,8 @@ public class test01 {
         if (n < 2){
             return n;
         }
-        int s = 0;
-        for (int i = 2; i <= n; i++) {
-            s = fib(i - 1) + fib(i - 2);
-        }
 
-        return s % 1000000007;
+        return (fib(n - 1) + fib(n - 2)) % 1000000007;
 
     }
 }
