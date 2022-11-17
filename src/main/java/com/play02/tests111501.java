@@ -28,20 +28,28 @@ public class tests111501 {
     // 1 2 3 4 5 6  1/6 1/6 1/6 1/6 1/6 1/6
     // 1 2 3 4 5 6  1/6*1/6 [1/6*1/6]*2 1/6*1/6*1/6+1/6*1/6*1/6
     // 1 2 3 4 5 6
+
+    /**
+     *
+     * 逆向 f(n, x) = sum( i= 1-6 )  f(n - 1, x - i) * 1/6
+     *
+     * 正向 f(n - 1, x) = sum( i = 1-6 ) f(n, x + i)
+     *
+     *  n = 4 , x =5
+     *  f(3 , 5) = f(4, 6 ) + f(4, 7) + f(4, 8) + f(4, 9) + f(4, 10) + f(4, 11)
+     */
     public static double[] dicesProbability(int n) {
         double base = 0.16667;
         int len = 5*n + 1;
         double[] res = new double[len];
 
-        for (int i = 0; i < len / 2; i++) {
-            if (n == 1){
-                res[i] = base;
-            }else {
-                String substring = String.valueOf(Math.pow(base, n) * (i + 1)).substring(0, 7);
-                res[i] = Double.valueOf(substring);
-            }
-            res[len - 1 - i] = res[i];
-        }
+
+
+
+
+
+
+
         return res;
     }
 }
