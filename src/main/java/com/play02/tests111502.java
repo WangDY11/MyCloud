@@ -37,17 +37,12 @@ public class tests111502 {
         for (int i = 2; i <= n; i++) {
             // j表示：i个筛子的和为j，  范围[i, 6*i]
             for (int j = i; j <= 6*i; j++) {
-                // 状态转移 i-i 个筛子，和为j - k
+                // 状态转移 i-1 个筛子，和为j - k
                 for (int k = 1; k <= 6 && k <= j; k++) { // 3 4   2 3
-
                     dp[i][j] += dp[i - 1][j - k];
-
                 }
-                
             }
-            
         }
-
         for (int i = n; i <= 6*n; i++) {
             res[i - n] = (double) dp[n][i] / all;
         }
