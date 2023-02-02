@@ -1,4 +1,4 @@
-package thread;
+package com.thread;
 
 import com.google.common.util.concurrent.RateLimiter;
 
