@@ -27,29 +27,28 @@ public class addTwoNumbers {
      * 你可以假设除了数字 0 之外，这两个数都不会以 0开头。
      */
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode temp1 = l1;
-        ListNode temp2 = l2;
         ListNode res = new ListNode(0);
-        while (l1.next != null && l2.next != null){
-            if (l1.next == null){
-                l1.next = new ListNode(0);
-            }
-            if (l2.next == null){
-                l2.next = new ListNode(0);
-            }
+        ListNode temp = res;
+        int carry = 0; // 满十进一
+        while (l1 != null && l2 != null){
+            int x = l1 == null ? 0 : l1.val;
+            int y = l2 == null ? 0 : l2.val;
             /**
              * 输入：l1 = [2,4,3], l2 = [5,6,4]
              * 输出：[7,0,8]
              * 解释：342 + 465 = 807.
              */
-            int sum = temp1.val + temp2.val;
-            int n = (sum) % 10;
-            res.next = new ListNode(n);
-            if (sum >= 10){
-                l1.next.val = l1.next.val + 1;
-            }
-            l1 = l1.next;
-            l2 = l2.next;
+            // 0 7
+            int sum = x + y + carry;
+            carry = sum / 10;
+            temp.next = new ListNode((sum) % 10);
+            temp = temp.next;
+
+            if (l1 != null) l1 = l1.next;
+            if (l2 != null) l2 = l2.next;
+        }
+        if (carry == 1){
+            temp.next = new ListNode(carry);
         }
         return res.next;
     }
