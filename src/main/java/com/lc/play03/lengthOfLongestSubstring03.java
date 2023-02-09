@@ -26,16 +26,19 @@ public class lengthOfLongestSubstring03 {
     public static int lengthOfLongestSubstring(String s) {
         int max = 0;
         char[] chars = s.toCharArray();
+        int r = 0; // 右指针
         HashSet<Character> set = new HashSet();
         for (int i = 0; i < chars.length; i++) {
-            set.remove(chars[i]);
-            for (int j = i + 1; j < chars.length; j++) {
-                if (set.contains(chars[j])){
-                    break;
-                }
-                set.add(chars[j]);
+            if (i > 0){
+                // 因为i+1后，所以remove前一项
+                set.remove(chars[i - 1]);
             }
-            max = Math.max(max, set.size());
+            while (r < chars.length && !set.contains(chars[r])){
+                set.add(chars[r]);
+                ++r;
+            }
+            // 右指针退出，代表r指向重复的一向
+            max = Math.max(max, r - 1 - i + 1);
         }
         return max;
     }
